@@ -1,0 +1,10 @@
+;
+; this is modula sine wave 
+;
+
+100 (1 sr fs.os.osc) 50.0 * 440 + 
+
+(1 sr fs.os.osc) 0.33 * 
+
+dup (1 sr "test.wav" io.write_wav)
+

@@ -1,0 +1,11 @@
+32 $bs !~
+
+(12 $bs @~ sr fs.ba.beat)    
+
+(0.05 $bs @~ sr fs.os.osc) 150 * 400 +
+swap (0.01 0.01 2.0 sr fs.zz.tenvx) 800 * +
+
+(sr fs.os.osc_) 0.25 *
+
+
+dup (1 sr "test.wav" io.write_wav)

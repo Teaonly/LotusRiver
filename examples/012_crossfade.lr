@@ -1,0 +1,13 @@
+64 $bs !~
+
+(440 $bs @~ sr fs.os.osc) 0.5 *
+(550 $bs @~ sr fs.os.osc) 0.5 *
+
+(20000 40000 $bs @~ sr fs.ba.pulsen) (0.03 sr fs.zz.port) 
+
+dup rot *
+
+rot rot 1.0 - * +
+
+0.33 *
+dup (1 sr "test.wav" io.write_wav)

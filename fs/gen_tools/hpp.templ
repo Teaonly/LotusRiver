@@ -1,0 +1,34 @@
+#ifndef _FAUST_{DSP_NAME}_HPP_
+#define _FAUST_{DSP_NAME}_HPP_
+
+#include "lr.hpp"
+#include "fs/dsp.hpp"
+
+namespace mydsp {
+    class {dsp_name};
+}
+
+namespace lr { namespace fs {
+
+struct {dsp_name}Word : public NativeWord {
+    {dsp_name}Word() { dsp = nullptr; }
+    virtual ~{dsp_name}Word();
+    virtual void run(Stack& stack);
+
+    NWORD_CREATOR_DEFINE_LR({dsp_name}Word)
+
+private:
+    void none_input(int bs, Stack& stack);
+    void signals_input(Stack& stack);
+    void vectors_input(Stack& stack);
+
+private:
+{dsp_parameters}
+    mydsp::{dsp_name}* dsp;
+    
+{output_names}
+
+};
+
+}}
+#endif

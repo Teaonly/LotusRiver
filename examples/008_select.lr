@@ -1,0 +1,29 @@
+60 7 * (1 sr fs.ba.beat)     ; 8 hz beat signal
+dup
+
+1 "60 62 64 67 71 72 74 76" zz.tseq
+dup rot
+
+;; seq|seq|beat
+(0.01 0.1 0.1 sr fs.zz.tenv)
+swap
+
+;; seq|env|seq
+(sr fs.ba.midikey2hz) dup 3.0 (1 sr fs.zz.fm) 
+
+;; seq|env|fm
+* swap 
+
+;; fe | seq 
+76 comp 0.0 0.75 
+(sr fs.zz.select) 
+*     
+
+
+0.70 sr fs.zz.port
+
+(0.25 0.1 0.75 128 sr fs.re.mono_freeverb)
+
+0.10 *  
+
+dup (1 sr "test.wav" io.write_wav)

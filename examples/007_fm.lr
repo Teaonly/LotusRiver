@@ -1,0 +1,4 @@
+440 100 50.0 (64 sr fs.zz.fm)
+
+0.33 *
+dup (1 sr "test.wav" io.write_wav)

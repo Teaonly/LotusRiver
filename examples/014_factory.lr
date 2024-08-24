@@ -1,0 +1,6 @@
+32 $bs !~
+
+[ 440.0 ] $bs @~ sr "./examples/assets/noise.dsp" fs.factory 
+
+dup (1 sr "test.wav" io.write_wav)
+

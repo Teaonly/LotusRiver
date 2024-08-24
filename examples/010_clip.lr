@@ -1,0 +1,12 @@
+32 $bs !
+
+60 (sr fs.ba.midikey2hz) ($bs @~ sr fs.os.sawtooth)
+
+1 ($bs @ sr fs.os.osc) (0.3 3.0 sr fs.zz.biscale) *
+
+-1.57 1.57 clip sin
+
+0.15 *
+
+dup (1 sr "test.wav" io.write_wav)
+

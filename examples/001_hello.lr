@@ -1,0 +1,11 @@
+%def osc
+    0.0 "phase" !~
+    
+    (2.0 math.pi *) * sr inv *
+    
+    "phase" @ sin swap "phase" @ + (2.0 math.pi *) swap % "phase" !  
+    
+%end
+
+440 osc 0.33 * 
+dup (1 sr "test.wav" io.write_wav)

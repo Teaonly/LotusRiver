@@ -1,0 +1,3 @@
+64 "./examples/assets/violin.wav" io.read_wav
+
+6 (sr fs.ba.bitcrusher)

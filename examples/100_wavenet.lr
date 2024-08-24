@@ -1,0 +1,13 @@
+;mono.midi io.monokey 0.25 * swap
+
+3 "./examples/assets/shaolinsi.perf" io.read_mat swap drop 0.15 * swap    ; output : loudness freq
+
+160 16000 fs.os.sawtooth *
+
+(8 3 8 3 "./examples/assets/dizi.yaml" nn.wavenet)
+
+("./examples/assets/reverb_dizi.yaml" nn.reverb )
+
+(16000 sr /) zz.upsampler
+
+(dup 1 sr "test.wav" io.write_wav)

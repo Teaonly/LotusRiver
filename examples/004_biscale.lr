@@ -1,0 +1,8 @@
+1 $bs !~
+
+0.2 ( $bs @~ sr fs.os.osc)
+(48 82 sr fs.zz.biscale)
+floor (sr fs.ba.midikey2hz) ($bs @~ sr fs.os.osc) 
+
+0.3 *
+dup (1 sr "test.wav" io.write_wav)

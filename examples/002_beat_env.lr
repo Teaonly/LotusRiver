@@ -1,0 +1,5 @@
+(5000 8000 32 sr fs.ba.pulsen) 
+
+(350 0.0 0.1 0.1 sr fs.zz.vibrato)
+
+(dup 1 sr "test.wav" io.write_wav)

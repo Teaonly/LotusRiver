@@ -1,0 +1,14 @@
+mono.midi io.monokey 0.15 * swap
+
+;mono.midi io.ezwind 0.25 * swap
+
+16 16000 fs.os.sawtooth *
+
+; channles, kernel_size, dialation, repeat, weight_file
+(8 3 8 3 "./examples/assets/dizi.yaml" nn.wavenet)
+
+( "./examples/assets/reverb_xiao.yaml" nn.reverb )
+
+;(50 sr fs.fi.highpass)
+(16000 sr /) zz.upsampler
+
